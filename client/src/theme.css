@@ -1,0 +1,150 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   DeepReader — Design Tokens
+   Warm dark theme with semantic color system
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Backgrounds (warm dark) ──────────────────────────────────────── */
+  --bg-deep:      #14120f;
+  --bg-base:      #1a1714;
+  --bg-surface:   #201c18;
+  --bg-elevated:  #282420;
+  --bg-hover:     #302b26;
+  --bg-active:    #38332d;
+
+  /* ── Text ─────────────────────────────────────────────────────────── */
+  --text-primary:   #e8e0d8;
+  --text-secondary: #a89f94;
+  --text-muted:     #6b6259;
+  --text-faint:     #4a4239;
+
+  /* ── Borders ──────────────────────────────────────────────────────── */
+  --border-subtle: #2a2520;
+  --border:        #352f29;
+  --border-strong: #4a4239;
+
+  /* ── Accent: Blue (interactive, links, due) ───────────────────────── */
+  --accent-blue:      #5a9cf5;
+  --accent-blue-dim:  #2a3a4d;
+  --accent-blue-muted: #1e2d3d;
+
+  /* ── Accent: Green (success, streak, save) ────────────────────────── */
+  --accent-green:      #4adf8a;
+  --accent-green-dim:  #1a3a28;
+  --accent-green-muted: #132a1e;
+
+  /* ── Accent: Amber (harvest, questions, warmth) ───────────────────── */
+  --accent-amber:      #f0a858;
+  --accent-amber-dim:  #3a2a12;
+  --accent-amber-muted: #2a1e0e;
+
+  /* ── Accent: Red (danger, leech) ──────────────────────────────────── */
+  --accent-red:      #ef6b6b;
+  --accent-red-dim:  #3a1c1c;
+  --accent-red-muted: #2a1414;
+
+  /* ── Accent: Purple (graph, tags) ─────────────────────────────────── */
+  --accent-purple:     #b898ef;
+  --accent-purple-dim: #2a1e3a;
+
+  /* ── Highlight (yellow-gold) ──────────────────────────────────────── */
+  --highlight:     #ffd76a;
+  --highlight-dim: #3a3218;
+
+  /* ── Spacing scale ────────────────────────────────────────────────── */
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  0.75rem;
+  --space-lg:  1rem;
+  --space-xl:  1.5rem;
+  --space-2xl: 2rem;
+  --space-3xl: 3rem;
+
+  /* ── Radii ────────────────────────────────────────────────────────── */
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   10px;
+  --radius-xl:   14px;
+  --radius-pill: 100px;
+
+  /* ── Typography ───────────────────────────────────────────────────── */
+  --font-ui:      'Inter', system-ui, -apple-system, sans-serif;
+  --font-reading:  'Georgia', 'Times New Roman', serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  --text-xs:   0.68rem;
+  --text-sm:   0.78rem;
+  --text-base: 0.88rem;
+  --text-md:   0.95rem;
+  --text-lg:   1.1rem;
+  --text-xl:   1.35rem;
+  --text-2xl:  1.75rem;
+
+  /* ── Shadows ──────────────────────────────────────────────────────── */
+  --shadow-sm:  0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.4);
+  --shadow-lg:  0 12px 40px rgba(0,0,0,0.5);
+  --shadow-xl:  0 20px 60px rgba(0,0,0,0.6);
+
+  /* ── Transitions ──────────────────────────────────────────────────── */
+  --transition-fast: 120ms ease;
+  --transition:      180ms ease;
+  --transition-slow: 300ms ease;
+
+  /* ── Sidebar ──────────────────────────────────────────────────────── */
+  --sidebar-width: 220px;
+  --sidebar-collapsed: 56px;
+  --topbar-height: 48px;
+}
+
+/* ── Focus ring ─────────────────────────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* ── Scrollbar styling ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* ── Selection ──────────────────────────────────────────────────────── */
+::selection {
+  background: var(--accent-blue-dim);
+  color: var(--text-primary);
+}
+
+/* ── Utility: transition on interactive elements ────────────────────── */
+button, a, input, select, textarea {
+  transition: background var(--transition-fast),
+              border-color var(--transition-fast),
+              color var(--transition-fast),
+              opacity var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Tooltip / title polyfill appearance ─────────────────────────────── */
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-faint);
+}

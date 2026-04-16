@@ -1,0 +1,11 @@
+services:
+  deepreader:
+    build: .
+    ports:
+      - "7070:7070"
+    volumes:
+      - ./data:/data
+    environment:
+      - NODE_ENV=production
+      - DB_PATH=/data/deepreader.db
+      - LIBRARY_PATH=/data/library
